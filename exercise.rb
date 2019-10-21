@@ -1,4 +1,5 @@
 class Employee
+    attr_accessor :name, :title, :salary, :boss
     def initialize(name, title, salary, boss)
         @name = name
         @title = title
@@ -10,28 +11,29 @@ class Employee
         return @salary*multiplier
     end
 
-
 end
 
 class Manager < Employee
-    def initialize(*subordinates)
+    attr_accessor :headcount
+    def initialize(name, title, salary, boss)
+        super(name, title, salary, boss)
         @headcount = []
-        subordinates.each do |employee|
-            headcount << employee
-        end
     end
 
     def bonus
-        salary = 1
-        headcount.each do |subordinate|
-            if subordinate.boss == nil
-                salary += subordinate.salary
-            else
-            salary += subordinate.salary
+        # salary = 1
+        # headcount.each do |subordinate|
+        #     if subordinate.boss == nil
+        #         salary += subordinate.salary
+        #     else
+        #     salary += subordinate.salary
+        #     end
         
-        end
-
+        # end
     end
 
+    def add_employee(employee)
+        @headcount << employee
+    end
 
 end
