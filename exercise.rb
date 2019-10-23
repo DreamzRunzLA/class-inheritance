@@ -20,8 +20,23 @@ class Manager < Employee
         @headcount = []
     end
 
-    def bonus
-        
+    def bonus(multiplier)
+        sum = 0
+
+        @headcount.each do |employee|
+            sum += employee.salary
+            sum += employee.subordinate_salaries
+        end
+
+        return sum*multiplier
+    end
+
+    def subordinate_salaries
+        sum = 0
+        @headcount.each do |employee|
+            sum += employee.salary
+        end
+        return sum
     end
 
     def add_employee(employee)
