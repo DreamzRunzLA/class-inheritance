@@ -21,15 +21,7 @@ class Manager < Employee
     end
 
     def bonus
-        # salary = 1
-        # headcount.each do |subordinate|
-        #     if subordinate.boss == nil
-        #         salary += subordinate.salary
-        #     else
-        #     salary += subordinate.salary
-        #     end
         
-        # end
     end
 
     def add_employee(employee)
